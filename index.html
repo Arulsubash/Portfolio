@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Portfolio</title>
+    <title>Modern Black Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -20,8 +20,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
+            background: #000000;
+            color: #ffffff;
             overflow-x: hidden;
         }
 
@@ -30,13 +30,14 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
             transition: all 0.3s ease;
             transform: translateY(-100px);
             animation: slideDown 0.8s ease forwards;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         @keyframes slideDown {
@@ -57,7 +58,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #667eea;
+            color: #ffffff;
             opacity: 0;
             animation: fadeInLeft 1s ease 0.3s forwards;
         }
@@ -81,7 +82,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: #ffffff;
             font-weight: 500;
             position: relative;
             transition: all 0.3s ease;
@@ -94,7 +95,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: #667eea;
+            background: #ffffff;
             transition: width 0.3s ease;
         }
 
@@ -103,7 +104,7 @@
         }
 
         .nav-links a:hover {
-            color: #667eea;
+            color: #cccccc;
             transform: translateY(-2px);
         }
 
@@ -116,7 +117,7 @@
         .menu-toggle span {
             width: 25px;
             height: 3px;
-            background: #333;
+            background: #ffffff;
             margin: 3px 0;
             transition: 0.3s;
         }
@@ -128,7 +129,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
             color: white;
             position: relative;
             overflow: hidden;
@@ -141,7 +142,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
             background-size: 50px 50px;
             animation: float 20s infinite linear;
             opacity: 0.3;
@@ -171,6 +172,7 @@
             margin-bottom: 2rem;
             opacity: 0;
             animation: fadeInUp 1s ease 1.3s forwards;
+            color: #cccccc;
         }
 
         .typing-text {
@@ -189,6 +191,7 @@
             line-height: 1.6;
             opacity: 0;
             animation: fadeInUp 1s ease 1.6s forwards;
+            color: #aaaaaa;
         }
 
         .cta-buttons {
@@ -232,8 +235,8 @@
         }
 
         .btn-primary {
-            background: white;
-            color: #667eea;
+            background: #ffffff;
+            color: #000000;
         }
 
         .btn-secondary {
@@ -244,13 +247,13 @@
 
         .btn:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 35px rgba(255,255,255,0.1);
         }
 
         /* Sections with scroll animations */
         .section {
             padding: 5rem 0;
-            background: white;
+            background: #000000;
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.8s ease;
@@ -262,7 +265,7 @@
         }
 
         .section:nth-child(even) {
-            background: #f8f9fa;
+            background: #0a0a0a;
         }
 
         .container {
@@ -276,7 +279,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 3rem;
-            color: #333;
+            color: #ffffff;
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease;
@@ -311,7 +314,7 @@
             width: 250px;
             height: 250px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #333333, #000000);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -321,6 +324,7 @@
             transition: transform 0.3s ease;
             position: relative;
             overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         .profile-pic::before {
@@ -330,7 +334,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(transparent, rgba(255,255,255,0.3), transparent);
+            background: conic-gradient(transparent, rgba(255,255,255,0.1), transparent);
             animation: rotate 3s linear infinite;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -363,13 +367,13 @@
         .about-text h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: #ffffff;
         }
 
         .about-text p {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #666;
+            color: #cccccc;
             margin-bottom: 1.5rem;
             opacity: 0;
             transform: translateY(20px);
@@ -388,12 +392,12 @@
         }
 
         .project-card {
-            background: white;
+            background: #111111;
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             transition: all 0.4s ease;
-            border: 1px solid #e9ecef;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0;
             transform: translateY(50px);
             position: relative;
@@ -407,7 +411,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
             transition: left 0.6s ease;
         }
 
@@ -425,22 +429,23 @@
 
         .project-card:hover {
             transform: translateY(-15px) rotateX(5deg);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+            box-shadow: 0 25px 60px rgba(255,255,255,0.1);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         .project-card h3 {
             font-size: 1.4rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: #ffffff;
             transition: color 0.3s ease;
         }
 
         .project-card:hover h3 {
-            color: #667eea;
+            color: #cccccc;
         }
 
         .project-card p {
-            color: #666;
+            color: #aaaaaa;
             line-height: 1.6;
             margin-bottom: 1.5rem;
         }
@@ -453,7 +458,7 @@
         }
 
         .tech-tag {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #333333, #000000);
             color: white;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
@@ -462,6 +467,7 @@
             opacity: 0;
             transform: scale(0);
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .project-card:hover .tech-tag {
@@ -480,7 +486,7 @@
         }
 
         .project-links a {
-            color: #667eea;
+            color: #ffffff;
             font-size: 1.2rem;
             transition: all 0.3s ease;
             padding: 0.5rem;
@@ -489,8 +495,8 @@
 
         .project-links a:hover {
             transform: scale(1.3) rotate(360deg);
-            color: #764ba2;
-            background: rgba(102, 126, 234, 0.1);
+            color: #cccccc;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         /* Skills Section animations */
@@ -501,16 +507,17 @@
         }
 
         .skill-card {
-            background: white;
+            background: #111111;
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             transition: all 0.4s ease;
             opacity: 0;
             transform: translateY(50px) rotate(5deg);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .skill-card::before {
@@ -520,7 +527,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(transparent, rgba(102, 126, 234, 0.1), transparent);
+            background: conic-gradient(transparent, rgba(255, 255, 255, 0.05), transparent);
             animation: rotate 4s linear infinite;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -552,24 +559,24 @@
 
         .skill-card:hover {
             transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(255,255,255,0.1);
         }
 
         .skill-icon {
             font-size: 3rem;
-            color: #667eea;
+            color: #ffffff;
             margin-bottom: 1rem;
             transition: all 0.3s ease;
         }
 
         .skill-card:hover .skill-icon {
-            color: #764ba2;
+            color: #cccccc;
             transform: scale(1.2) rotate(10deg);
         }
 
         .skill-name {
             font-weight: 600;
-            color: #333;
+            color: #ffffff;
         }
 
         /* Contact Section animations */
@@ -600,27 +607,34 @@
         .form-group textarea {
             width: 100%;
             padding: 1rem;
-            border: 2px solid #e9ecef;
+            border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             font-size: 1rem;
             transition: all 0.3s ease;
-            background: white;
+            background: #111111;
+            color: #ffffff;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #666666;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+            border-color: #ffffff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
             transform: scale(1.02);
         }
 
         /* Footer animations */
         .footer {
-            background: #333;
+            background: #000000;
             color: white;
             text-align: center;
             padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .social-links {
@@ -640,10 +654,10 @@
         }
 
         .social-links a:hover {
-            color: #667eea;
+            color: #cccccc;
             transform: translateY(-5px) scale(1.2);
-            border-color: #667eea;
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            border-color: #ffffff;
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
         }
 
         /* Keyframe animations */
@@ -688,10 +702,10 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: white;
+                background: rgba(0, 0, 0, 0.95);
                 flex-direction: column;
                 padding: 1rem 0;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                box-shadow: 0 5px 15px rgba(255,255,255,0.1);
             }
 
             .nav-links.active {
