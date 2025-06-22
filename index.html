@@ -716,6 +716,170 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Education Section Styles */
+        .education-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 55%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 4px solid white;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: translateX(-50%) scale(1.3);
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+        }
+
+        .education-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .education-card:hover::before {
+            left: 100%;
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+        }
+
+        .education-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover .education-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .education-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .education-card:hover h3 {
+            color: #667eea;
+        }
+
+        .institution {
+            font-weight: 500;
+            color: #667eea;
+            margin-bottom: 0.3rem;
+        }
+
+        .duration {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive adjustments for education section */
+        @media (max-width: 768px) {
+            .education-timeline::before {
+                left: 20px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body>
@@ -892,6 +1056,76 @@
         </div>
     </section>
 
+    <!-- Education and Certifications Section -->
+    <section id="education" class="section fade-in">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-content">
+                <div class="education-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="education-card">
+                                <div class="education-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3>Bachelor of Computer Science</h3>
+                                <p class="institution">University of Technology</p>
+                                <p class="duration">2018 - 2022</p>
+                                <p class="description">Graduated with honors, focusing on software engineering and web development. Completed capstone project on full-stack web applications.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="education-card">
+                                <div class="education-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <h3>AWS Certified Solutions Architect</h3>
+                                <p class="institution">Amazon Web Services</p>
+                                <p class="duration">2023</p>
+                                <p class="description">Professional certification demonstrating expertise in designing distributed systems on AWS platform.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="education-card">
+                                <div class="education-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <h3>React Developer Certification</h3>
+                                <p class="institution">Meta (Facebook)</p>
+                                <p class="duration">2022</p>
+                                <p class="description">Advanced certification in React development, including hooks, context API, and modern React patterns.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="education-card">
+                                <div class="education-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h3>Full Stack Web Development</h3>
+                                <p class="institution">FreeCodeCamp</p>
+                                <p class="duration">2021</p>
+                                <p class="description">Comprehensive bootcamp covering HTML, CSS, JavaScript, Node.js, React, and database management.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section fade-in">
         <div class="container">
@@ -996,12 +1230,19 @@
                             });
                         }, 500);
                     }
+
+                    // Animate timeline items when education section is visible
+                    if (entry.target.classList.contains('timeline-item')) {
+                        setTimeout(() => {
+                            entry.target.classList.add('animate');
+                        }, 200);
+                    }
                 }
             });
         }, observerOptions);
 
         // Observe all sections and cards
-        document.querySelectorAll('.section, .project-card, .skill-card').forEach(el => {
+        document.querySelectorAll('.section, .project-card, .skill-card, .timeline-item').forEach(el => {
             observer.observe(el);
         });
 
