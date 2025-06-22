@@ -1140,38 +1140,38 @@
     <section id="skills" class="section fade-in">
         <div class="container">
             <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-react"></i></div>
-                    <div class="skill-name">React</div>
+            
+            <!-- Frontend Skills -->
+            <div style="margin-bottom: 4rem;">
+                <h3 style="text-align: center; font-size: 2rem; font-weight: 600; color: #333; margin-bottom: 2rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">Frontend Development</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                        <div class="skill-name">HTML</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                        <div class="skill-name">CSS</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+                        <div class="skill-name">JavaScript</div>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-node-js"></i></div>
-                    <div class="skill-name">Node.js</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-python"></i></div>
-                    <div class="skill-name">Python</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <div class="skill-name">MongoDB</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-aws"></i></div>
-                    <div class="skill-name">AWS</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-docker"></i></div>
-                    <div class="skill-name">Docker</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
-                    <div class="skill-name">Git</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-js-square"></i></div>
-                    <div class="skill-name">JavaScript</div>
+            </div>
+
+            <!-- Backend Skills -->
+            <div>
+                <h3 style="text-align: center; font-size: 2rem; font-weight: 600; color: #333; margin-bottom: 2rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">Backend Development</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-python"></i></div>
+                        <div class="skill-name">Python</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-flask"></i></div>
+                        <div class="skill-name">Flask</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1349,6 +1349,17 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    
+                    // Animate subsection titles in skills section
+                    if (entry.target.id === 'skills') {
+                        const subsectionTitles = entry.target.querySelectorAll('h3');
+                        subsectionTitles.forEach((title, index) => {
+                            setTimeout(() => {
+                                title.style.opacity = '1';
+                                title.style.transform = 'translateY(0)';
+                            }, 300 + (index * 200));
+                        });
+                    }
                     
                     // Animate tech tags when project cards are visible
                     if (entry.target.classList.contains('project-card')) {
