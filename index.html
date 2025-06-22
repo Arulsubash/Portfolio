@@ -743,66 +743,6 @@
             margin: 0 auto;
         }
 
-        .education-timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .education-timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            transform: translateX(-50%);
-            border-radius: 10px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 4rem;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .timeline-item.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-right: 55%;
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-left: 55%;
-            text-align: left;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 20px;
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            transform: translateX(-50%);
-            border: 4px solid white;
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
-            z-index: 10;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-item:hover .timeline-dot {
-            transform: translateX(-50%) scale(1.3);
-            box-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
-        }
-
         .education-card {
             background: white;
             padding: 2rem;
@@ -812,6 +752,9 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
         }
 
         .education-card::before {
@@ -1182,34 +1125,16 @@
         <div class="container">
             <h2 class="section-title">Education</h2>
             <div class="education-content">
-                <div class="education-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="education-card">
-                                <div class="education-icon">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <h3>Bachelor of Computer Science</h3>
-                                <p class="institution">University of Technology</p>
-                                <p class="duration">2018 - 2022</p>
-                                <p class="description">Graduated with honors, focusing on software engineering and web development. Completed capstone project on full-stack web applications.</p>
+                <div style="display: flex; justify-content: center;">
+                    <div style="max-width: 600px;">
+                        <div class="education-card">
+                            <div class="education-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="education-card">
-                                <div class="education-icon">
-                                    <i class="fas fa-school"></i>
-                                </div>
-                                <h3>High School Diploma</h3>
-                                <p class="institution">Tech High School</p>
-                                <p class="duration">2014 - 2018</p>
-                                <p class="description">Specialized in Mathematics and Computer Science. Active member of the programming club and robotics team.</p>
-                            </div>
+                            <h3>Bachelor of Computer Science</h3>
+                            <p class="institution">University of Technology</p>
+                            <p class="duration">2018 - 2022</p>
+                            <p class="description">Graduated with honors, focusing on software engineering and web development. Completed capstone project on full-stack web applications.</p>
                         </div>
                     </div>
                 </div>
@@ -1224,32 +1149,22 @@
             <div class="certifications-grid">
                 <div class="certification-card">
                     <div class="certification-icon">
-                        <i class="fab fa-aws"></i>
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>AWS Certified Solutions Architect</h3>
-                    <p class="institution">Amazon Web Services</p>
+                    <h3>CS50x Introduction to Computer Science</h3>
+                    <p class="institution">Harvard University</p>
                     <p class="duration">2023</p>
-                    <p class="description">Professional certification demonstrating expertise in designing distributed systems on AWS platform.</p>
-                </div>
-
-                <div class="certification-card">
-                    <div class="certification-icon">
-                        <i class="fab fa-react"></i>
-                    </div>
-                    <h3>React Developer Certification</h3>
-                    <p class="institution">Meta (Facebook)</p>
-                    <p class="duration">2022</p>
-                    <p class="description">Advanced certification in React development, including hooks, context API, and modern React patterns.</p>
+                    <p class="description">Comprehensive introduction to computer science covering algorithms, data structures, web development, and programming languages including C, Python, and JavaScript.</p>
                 </div>
 
                 <div class="certification-card">
                     <div class="certification-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>Full Stack Web Development</h3>
-                    <p class="institution">FreeCodeCamp</p>
-                    <p class="duration">2021</p>
-                    <p class="description">Comprehensive bootcamp covering HTML, CSS, JavaScript, Node.js, React, and database management.</p>
+                    <h3>Complete Front End Development Journey</h3>
+                    <p class="institution">Infosys Springboard</p>
+                    <p class="duration">2023</p>
+                    <p class="description">Complete front-end development program covering HTML, CSS, JavaScript, React, and modern web development practices with hands-on projects.</p>
                 </div>
             </div>
         </div>
@@ -1361,6 +1276,17 @@
                         });
                     }
                     
+                    // Animate education card when education section is visible
+                    if (entry.target.id === 'education') {
+                        const educationCard = entry.target.querySelector('.education-card');
+                        if (educationCard) {
+                            setTimeout(() => {
+                                educationCard.style.opacity = '1';
+                                educationCard.style.transform = 'translateY(0)';
+                            }, 300);
+                        }
+                    }
+                    
                     // Animate tech tags when project cards are visible
                     if (entry.target.classList.contains('project-card')) {
                         setTimeout(() => {
@@ -1370,19 +1296,12 @@
                             });
                         }, 500);
                     }
-
-                    // Animate timeline items when education section is visible
-                    if (entry.target.classList.contains('timeline-item')) {
-                        setTimeout(() => {
-                            entry.target.classList.add('animate');
-                        }, 200);
-                    }
                 }
             });
         }, observerOptions);
 
         // Observe all sections and cards
-        document.querySelectorAll('.section, .project-card, .skill-card, .timeline-item, .certification-card').forEach(el => {
+        document.querySelectorAll('.section, .project-card, .skill-card, .certification-card').forEach(el => {
             observer.observe(el);
         });
 
